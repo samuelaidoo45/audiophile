@@ -1,0 +1,69 @@
+.menuOverlay {
+  position: fixed;
+  top: 89px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.menuContent {
+  background-color: white;
+  padding: 84px 24px 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 68px;
+  height: 750px;
+}
+
+.categoryCard {
+  background-color: #F1F1F1;
+  border-radius: 8px;
+  padding: 88px 24px 22px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categoryCard:last-child {
+  margin-bottom: 0;
+}
+
+.imageContainer {
+  position: absolute;
+  top: -52px;
+  width: 150px;
+  height: 120px;
+}
+
+.categoryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.categoryTitle {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.07px;
+  color: #000000;
+  margin: 0 0 17px;
+}
+
+.shopLink {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  transition: color 0.3s ease;
+}
+
+.shopLink:hover {
+  color: #D87D4A;
+} 

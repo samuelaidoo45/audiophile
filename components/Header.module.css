@@ -1,28 +1,24 @@
 .header {
-  position: absolute;
+  background-color: #191919;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  z-index: 1000;
+}
+
+.headerContent {
   height: 89px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
-  background: #191919;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  color: white;
-  z-index: 10;
 }
 
 .logo {
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 1.07px;
-  text-transform: lowercase;
-  color: #FFFFFF;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
 }
 
 .nav {
@@ -33,20 +29,13 @@
 .menuButton, .cartButton {
   background: none;
   border: none;
-  cursor: pointer;
   padding: 0;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 16px;
-  height: 15px;
-}
-
-.cartButton {
-  width: 23px;
-  height: 20px;
 }
 
 .menuButton:hover, .cartButton:hover {
-  opacity: 0.75;
+  opacity: 0.8;
 } 
