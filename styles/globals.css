@@ -1,0 +1,27 @@
+/* Global CSS Variables */
+:root {
+  --color-primary: #d87d4a;
+  --color-secondary: #101010;
+  --color-light: #fafafa;
+  --color-dark: #000000;
+  --color-gray: #f1f1f1;
+  --font-main: 'Manrope', Arial, sans-serif;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-main);
+  background: var(--color-light);
+  color: var(--color-secondary);
+  min-height: 100vh;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+} 
