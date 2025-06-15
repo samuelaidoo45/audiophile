@@ -1,0 +1,144 @@
+.footer {
+  background: #101010;
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  padding: 52px 24px;
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.orangeLine {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 101px;
+  height: 4px;
+  background: #D87D4A;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  margin-bottom: 48px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.link {
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  text-transform: uppercase;
+}
+
+.link:hover {
+  color: #D87D4A;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 500;
+  margin-bottom: 48px;
+  max-width: 540px;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 700;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 16px;
+}
+
+.socialLink {
+  transition: filter 0.2s ease;
+}
+
+.socialLink:hover {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(50%) saturate(434%) hue-rotate(338deg) brightness(95%) contrast(92%);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 60px 40px;
+  }
+
+  .orangeLine {
+    left: 40px;
+    transform: none;
+  }
+
+  .content {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .nav {
+    flex-direction: row;
+    gap: 34px;
+  }
+
+  .bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0;
+  }
+}
+
+@media (min-width: 1110px) {
+  .container {
+    padding: 75px 0;
+  }
+
+  .orangeLine {
+    left: 0;
+  }
+
+  .content {
+    gap: 36px;
+  }
+
+  .logo {
+    margin-bottom: 0;
+  }
+
+  .nav {
+    margin-bottom: 36px;
+  }
+
+  .description {
+    margin-bottom: 56px;
+  }
+} 

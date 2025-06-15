@@ -1,0 +1,153 @@
+.categories {
+  padding: 120px 24px;
+  margin: 89px 0 0;
+  background-color: #FFFFFF;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 68px;
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.category {
+  background-color: #F1F1F1;
+  border-radius: 8px;
+  padding: 88px 24px 22px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 165px;
+  transition: transform 0.3s ease;
+  margin-top: 52px;
+}
+
+.category:hover {
+  transform: translateY(-4px);
+}
+
+.imageWrapper {
+  position: absolute;
+  top: -52px;
+  width: 150px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.1));
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.07px;
+  color: #000000;
+  margin: 0 0 17px;
+  text-transform: uppercase;
+}
+
+.shopButton {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.shopButton:hover {
+  color: #D87D4A;
+}
+
+.shopButton svg {
+  margin-top: 1px;
+  transition: transform 0.3s ease;
+}
+
+.shopButton:hover svg {
+  transform: translateX(5px);
+}
+
+@media (min-width: 768px) {
+  .categories {
+    padding: 148px 40px;
+    margin: 0;
+  }
+
+  .container {
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .category {
+    flex: 1;
+    padding: 88px 15px 22px;
+    margin: 0 5px;
+  }
+
+  .imageWrapper {
+    width: 150px;
+    height: 120px;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 1110px) {
+  .categories {
+    padding: 200px 0;
+    margin: 0;
+  }
+
+  .container {
+    gap: 30px;
+  }
+
+  .category {
+    padding: 116px 30px 30px;
+    min-height: 204px;
+    margin: 0;
+  }
+
+  .imageWrapper {
+    width: 180px;
+    height: 140px;
+    top: -67px;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .name {
+    font-size: 18px;
+    letter-spacing: 1.3px;
+    margin-bottom: 15px;
+  }
+} 
