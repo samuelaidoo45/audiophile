@@ -3,57 +3,58 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './HeadphonesList.module.css';
+import data from '@/data/data.json';
 
-const HeadphonesList = () => {
-  const products = [
-    {
-      name: "XX99 MARK II HEADPHONES",
-      description: "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
-      image: "/assets/shared/desktop/image-xx99-mark-two-headphones.jpg",
-      link: "/headphones/xx99-mark-two",
-      isNew: true
-    },
-    {
-      name: "XX99 MARK I HEADPHONES",
-      description: "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music enthusiasts alike.",
-      image: "/assets/shared/desktop/image-xx99-mark-one-headphones.jpg",
-      link: "/headphones/xx99-mark-one",
-      isNew: false
-    },
-    {
-      name: "XX59 HEADPHONES",
-      description: "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
-      image: "/assets/shared/mobile/image-xx59-headphones.jpg",
-      link: "/headphones/xx59",
-      isNew: false
-    }
-  ];
+export default function HeadphonesList() {
+  const headphones = data
+    .filter(product => product.category === 'headphones')
+    .sort((a, b) => {
+      // First, sort new products to the top
+      if (a.new && !b.new) return -1;
+      if (!a.new && b.new) return 1;
+      
+      // If neither is new, put XX99 Mark I second
+      if (!a.new && !b.new) {
+        if (a.name.includes('XX99 Mark I')) return -1;
+        if (b.name.includes('XX99 Mark I')) return 1;
+      }
+      
+      return 0;
+    });
+
+  const formatProductName = (name) => {
+    // Split the name at "Headphones" and format each part
+    const parts = name.split('Headphones').map(part => part.trim());
+    return (
+      <>
+        {parts[0]}<br />HEADPHONES
+      </>
+    );
+  };
 
   return (
-    <section className={styles.productList}>
-      {products.map((product, index) => (
-        <div key={index} className={styles.productCard}>
+    <div className={styles.productList}>
+      {headphones.map((headphone) => (
+        <div key={headphone.id} className={styles.productCard}>
           <div className={styles.imageContainer}>
             <Image
-              src={product.image}
-              alt={product.name}
+              src={headphone.image.mobile.replace('./', '/')}
+              alt={headphone.name}
               width={327}
               height={352}
               className={styles.productImage}
             />
           </div>
           <div className={styles.productInfo}>
-            {product.isNew && <span className={styles.newProduct}>NEW PRODUCT</span>}
-            <h2 className={styles.productName}>{product.name}</h2>
-            <p className={styles.productDescription}>{product.description}</p>
-            <Link href={product.link} className={styles.seeProductButton}>
-              SEE PRODUCT
+            {headphone.new && <span className={styles.newProduct}>NEW PRODUCT</span>}
+            <h2 className={styles.productName}>{formatProductName(headphone.name)}</h2>
+            <p className={styles.productDescription}>{headphone.description}</p>
+            <Link href={`/headphones/${headphone.slug}`}>
+              <button className={styles.seeProductButton}>SEE PRODUCT</button>
             </Link>
           </div>
         </div>
       ))}
-    </section>
+    </div>
   );
-};
-
-export default HeadphonesList; 
+} 

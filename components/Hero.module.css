@@ -91,9 +91,84 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  text-decoration: none;
 }
 
 .ctaButton:hover {
   background: #FBAF85;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    height: 729px;
+  }
+
+  .heroImage {
+    background-image: url('/assets/home/tablet/image-header.jpg');
+  }
+
+  .heroContent {
+    margin-top: 126px;
+  }
+
+  .title {
+    font-size: 56px;
+    line-height: 58px;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+  }
+
+  .description {
+    max-width: 349px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 1110px) {
+  .hero {
+    height: 632px;
+  }
+
+  .heroImage {
+    background-image: url('/assets/home/desktop/image-hero.jpg');
+  }
+
+  .heroContent {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .heroText {
+    text-align: left;
+    max-width: 1110px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 379px;
+    margin-left: 165px;
+  }
+
+  .newProduct {
+    text-align: left;
+  }
+
+  .title {
+    text-align: left;
+  }
+
+  .description {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .ctaButton {
+    margin: 0;
+  }
 } 

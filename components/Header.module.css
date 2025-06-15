@@ -19,6 +19,13 @@
 .logo {
   display: flex;
   align-items: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 .nav {
@@ -38,4 +45,29 @@
 
 .menuButton:hover, .cartButton:hover {
   opacity: 0.8;
+}
+
+.cartButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.cartCount {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #D87D4A;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
 } 

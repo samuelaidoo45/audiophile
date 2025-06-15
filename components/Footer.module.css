@@ -45,6 +45,7 @@
   letter-spacing: 2px;
   text-decoration: none;
   transition: color 0.2s ease;
+  text-transform: uppercase;
 }
 
 .link:hover {
@@ -57,6 +58,7 @@
   line-height: 25px;
   font-weight: 500;
   margin-bottom: 48px;
+  max-width: 540px;
 }
 
 .bottom {
@@ -80,9 +82,63 @@
 }
 
 .socialLink {
-  transition: opacity 0.2s ease;
+  transition: filter 0.2s ease;
 }
 
 .socialLink:hover {
-  opacity: 0.7;
+  filter: brightness(0) saturate(100%) invert(57%) sepia(50%) saturate(434%) hue-rotate(338deg) brightness(95%) contrast(92%);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 60px 40px;
+  }
+
+  .orangeLine {
+    left: 40px;
+    transform: none;
+  }
+
+  .content {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .nav {
+    flex-direction: row;
+    gap: 34px;
+  }
+
+  .bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0;
+  }
+}
+
+@media (min-width: 1110px) {
+  .container {
+    padding: 75px 0;
+  }
+
+  .orangeLine {
+    left: 0;
+  }
+
+  .content {
+    gap: 36px;
+  }
+
+  .logo {
+    margin-bottom: 0;
+  }
+
+  .nav {
+    margin-bottom: 36px;
+  }
+
+  .description {
+    margin-bottom: 56px;
+  }
 } 

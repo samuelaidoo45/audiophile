@@ -1,5 +1,6 @@
 import styles from './FeaturedSpeaker.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function FeaturedSpeaker() {
   return (
@@ -23,7 +24,9 @@ export default function FeaturedSpeaker() {
             <p className={styles.description}>
               Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
             </p>
-            <button className={styles.button}>SEE PRODUCT</button>
+            <Link href="/speakers/zx9-speaker" className={styles.button}>
+              SEE PRODUCT
+            </Link>
           </div>
         </div>
       </section>

@@ -1,4 +1,4 @@
-.productList {
+.container {
   padding: 64px 24px;
   display: flex;
   flex-direction: column;
@@ -6,78 +6,81 @@
   background-color: #FFFFFF;
 }
 
-.productCard {
+.product {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 32px;
+  text-align: center;
 }
 
 .imageContainer {
   width: 100%;
-  height: 352px;
   border-radius: 8px;
   overflow: hidden;
-  background-color: #F1F1F1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .productImage {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
 }
 
 .productInfo {
-  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 24px;
+  align-items: center;
 }
 
 .newProduct {
   color: #D87D4A;
   font-size: 14px;
+  font-style: normal;
   font-weight: 400;
+  line-height: normal;
   letter-spacing: 10px;
   text-transform: uppercase;
-  margin-bottom: 8px;
 }
 
 .productName {
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  line-height: 38px;
   color: #000000;
-  margin: 0;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: 1px;
   text-transform: uppercase;
+  margin: 0;
 }
 
-.productDescription {
+.productInfo p {
+  color: #000000;
   font-size: 15px;
+  font-style: normal;
   font-weight: 500;
   line-height: 25px;
-  color: rgba(0, 0, 0, 0.5);
-  margin: 0;
+  opacity: 0.5;
 }
 
-.seeProductButton {
-  background-color: #D87D4A;
-  color: #FFFFFF;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.seeProduct {
+  background: #D87D4A;
   padding: 15px 30px;
   border: none;
-  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.seeProductButton:hover {
+.seeProduct:hover {
   background-color: #FBAF85;
 } 

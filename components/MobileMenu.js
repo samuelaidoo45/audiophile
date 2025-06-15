@@ -7,6 +7,10 @@ import styles from './MobileMenu.module.css';
 const MobileMenu = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
+  const handleNavigation = () => {
+    onClose();
+  };
+
   return (
     <div className={styles.menuOverlay}>
       <div className={styles.menuContent}>
@@ -21,7 +25,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
             />
           </div>
           <h3 className={styles.categoryTitle}>HEADPHONES</h3>
-          <Link href="/headphones" className={styles.shopLink}>
+          <Link href="/headphones" className={styles.shopLink} onClick={handleNavigation}>
             SHOP <Image src="/assets/shared/desktop/icon-arrow-right.svg" alt="arrow" width={8} height={12} />
           </Link>
         </div>
@@ -37,7 +41,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
             />
           </div>
           <h3 className={styles.categoryTitle}>SPEAKERS</h3>
-          <Link href="/speakers" className={styles.shopLink}>
+          <Link href="/speakers" className={styles.shopLink} onClick={handleNavigation}>
             SHOP <Image src="/assets/shared/desktop/icon-arrow-right.svg" alt="arrow" width={8} height={12} />
           </Link>
         </div>
@@ -53,7 +57,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
             />
           </div>
           <h3 className={styles.categoryTitle}>EARPHONES</h3>
-          <Link href="/earphones" className={styles.shopLink}>
+          <Link href="/earphones" className={styles.shopLink} onClick={handleNavigation}>
             SHOP <Image src="/assets/shared/desktop/icon-arrow-right.svg" alt="arrow" width={8} height={12} />
           </Link>
         </div>

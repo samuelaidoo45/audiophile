@@ -6,13 +6,24 @@ export default function BestGear() {
     <div className={styles.wrapper}>
       <section className={styles.container}>
         <div className={styles.imageContainer}>
-          <Image
-            src="/assets/shared/mobile/image-best-gear.jpg"
-            alt="Man wearing headphones"
-            width={327}
-            height={300}
-            className={styles.image}
-          />
+          <picture>
+            <source 
+              media="(min-width: 1110px)" 
+              srcSet="/assets/shared/desktop/image-best-gear.jpg"
+            />
+            <source 
+              media="(min-width: 768px)" 
+              srcSet="/assets/shared/tablet/image-best-gear.jpg"
+            />
+            <Image
+              src="/assets/shared/mobile/image-best-gear.jpg"
+              alt="Man wearing headphones"
+              fill
+              sizes="(min-width: 1110px) 540px, (min-width: 768px) 689px, 327px"
+              className={styles.image}
+              priority
+            />
+          </picture>
         </div>
         <div className={styles.content}>
           <h2 className={styles.title}>

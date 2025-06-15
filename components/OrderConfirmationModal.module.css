@@ -1,0 +1,171 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.modal {
+  background: #FFFFFF;
+  padding: 32px;
+  max-width: 540px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.checkmark {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 33px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 1.14px;
+  margin: 0 0 24px;
+  color: #000000;
+}
+
+.confirmation {
+  font-size: 15px;
+  line-height: 25px;
+  color: #000000;
+  opacity: 0.5;
+  margin: 0 0 33px;
+}
+
+.orderSummary {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 46px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.itemsList {
+  background: #F1F1F1;
+  padding: 24px;
+}
+
+.mainItem {
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.productInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.productImage {
+  border-radius: 8px;
+}
+
+.productDetails {
+  flex-grow: 1;
+  margin: 0 16px;
+}
+
+.productDetails h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  color: #000000;
+}
+
+.productDetails p {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000000;
+  opacity: 0.5;
+  margin: 0;
+}
+
+.quantity {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000000;
+  opacity: 0.5;
+}
+
+.otherItems {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000000;
+  opacity: 0.5;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.grandTotal {
+  background: #000000;
+  padding: 24px;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grandTotal span:first-child {
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.amount {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.backButton {
+  width: 100%;
+  height: 48px;
+  background: #D87D4A;
+  color: #FFFFFF;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.backButton:hover {
+  background: #FBAF85;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    padding: 24px;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .confirmation {
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .productDetails h3 {
+    font-size: 14px;
+  }
+
+  .otherItems {
+    font-size: 14px;
+  }
+} 

@@ -24,28 +24,30 @@ export default function Categories() {
   ];
 
   return (
-    <section className={styles.categories}>
+    <section className={styles.categories} aria-label="Product Categories">
       <div className={styles.container}>
         {categories.map((category, index) => (
           <div key={index} className={styles.category}>
             <div className={styles.imageWrapper}>
               <Image
                 src={category.image}
-                alt={category.name}
-                width={150}
-                height={150}
+                alt={`${category.name} thumbnail`}
+                width={180}
+                height={160}
                 className={styles.image}
+                priority={index === 0}
               />
             </div>
-            <h2 className={styles.name}>{category.name}</h2>
-            <Link href={category.link} className={styles.shopButton}>
+            <h3 className={styles.name}>{category.name}</h3>
+            <Link 
+              href={category.link} 
+              className={styles.shopButton}
+              aria-label={`Shop ${category.name}`}
+            >
               SHOP
-              <Image 
-                src="/assets/shared/desktop/icon-arrow-right.svg" 
-                alt="arrow" 
-                width={8} 
-                height={12} 
-              />
+              <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M1.322 1l5 5-5 5" stroke="#D87D4A" strokeWidth="2" fill="none" fillRule="evenodd"/>
+              </svg>
             </Link>
           </div>
         ))}
