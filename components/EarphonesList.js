@@ -29,7 +29,7 @@ export default function EarphonesList() {
         <div key={earphone.id} className={styles.product}>
           <div className={styles.imageContainer}>
             <Image
-              src={earphone.image.mobile.replace('./', '/')}
+              src={earphone.image.mobile.replace('./assets/', '/assets/')}
               alt={earphone.name}
               width={327}
               height={352}

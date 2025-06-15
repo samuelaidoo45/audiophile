@@ -38,7 +38,7 @@ export default function HeadphonesList() {
         <div key={headphone.id} className={styles.productCard}>
           <div className={styles.imageContainer}>
             <Image
-              src={headphone.image.mobile.replace('./', '/')}
+              src={headphone.image.mobile.replace('./assets/', '/assets/')}
               alt={headphone.name}
               width={327}
               height={352}
