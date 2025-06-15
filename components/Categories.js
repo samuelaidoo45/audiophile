@@ -1,19 +1,25 @@
+"use client";
+
 import styles from './Categories.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Categories() {
   const categories = [
     {
       name: 'HEADPHONES',
-      image: '/assets/cart/image-xx99-mark-one-headphones.jpg'
+      image: '/assets/shared/desktop/image-category-thumbnail-headphones.png',
+      link: '/headphones'
     },
     {
       name: 'SPEAKERS',
-      image: '/assets/cart/image-zx9-speaker.jpg'
+      image: '/assets/shared/desktop/image-category-thumbnail-speakers.png',
+      link: '/speakers'
     },
     {
       name: 'EARPHONES',
-      image: '/assets/cart/image-yx1-earphones.jpg'
+      image: '/assets/shared/desktop/image-category-thumbnail-earphones.png',
+      link: '/earphones'
     }
   ];
 
@@ -32,12 +38,15 @@ export default function Categories() {
               />
             </div>
             <h2 className={styles.name}>{category.name}</h2>
-            <button className={styles.shopButton}>
+            <Link href={category.link} className={styles.shopButton}>
               SHOP
-              <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.322 1l5 5-5 5" stroke="#D87D4A" strokeWidth="2" fill="none"/>
-              </svg>
-            </button>
+              <Image 
+                src="/assets/shared/desktop/icon-arrow-right.svg" 
+                alt="arrow" 
+                width={8} 
+                height={12} 
+              />
+            </Link>
           </div>
         ))}
       </div>
