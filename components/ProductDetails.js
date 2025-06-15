@@ -39,7 +39,7 @@ const ProductDetails = ({ slug }) => {
       id: currentProduct.id,
       name: currentProduct.name,
       price: currentProduct.price,
-      image: currentProduct.image.mobile.replace('./', '/'),
+      image: currentProduct.image.mobile.replace('./assets/', '/assets/'),
       quantity: quantity
     };
 
@@ -203,10 +203,10 @@ const ProductDetails = ({ slug }) => {
               <div key={index} className={styles.suggestionCard}>
                 <div className={styles.suggestionImage}>
                   <picture>
-                    <source media="(min-width: 1024px)" srcSet={item.image.desktop.replace('./', '/')} />
-                    <source media="(min-width: 768px)" srcSet={item.image.tablet.replace('./', '/')} />
+                    <source media="(min-width: 1024px)" srcSet={item.image.desktop.replace('./assets/', '/assets/')} />
+                    <source media="(min-width: 768px)" srcSet={item.image.tablet.replace('./assets/', '/assets/')} />
                     <Image
-                      src={item.image.mobile.replace('./', '/')}
+                      src={item.image.mobile.replace('./assets/', '/assets/')}
                       alt={item.name}
                       width={350}
                       height={318}

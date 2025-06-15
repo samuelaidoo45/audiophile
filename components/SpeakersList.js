@@ -31,7 +31,7 @@ export default function SpeakersList() {
         <div key={speaker.id} className={styles.productCard}>
           <div className={styles.imageContainer}>
             <Image
-              src={speaker.image.mobile.replace('./', '/')}
+              src={speaker.image.mobile.replace('./assets/', '/assets/')}
               alt={speaker.name}
               width={327}
               height={352}
