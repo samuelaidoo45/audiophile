@@ -10,10 +10,12 @@
 
 .menuContent {
   background-color: white;
-  padding: 84px 24px 35px;
+  padding: 84px 24px 67px;
   display: flex;
   flex-direction: column;
   gap: 68px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   height: 750px;
 }
 
@@ -28,8 +30,12 @@
   align-items: center;
 }
 
+.categoryCard:first-child {
+  margin-top: 0;
+}
+
 .categoryCard:last-child {
-  margin-bottom: 0;
+  margin-bottom: 52px;
 }
 
 .imageContainer {
@@ -51,6 +57,7 @@
   letter-spacing: 1.07px;
   color: #000000;
   margin: 0 0 17px;
+  text-transform: uppercase;
 }
 
 .shopLink {
@@ -66,4 +73,10 @@
 
 .shopLink:hover {
   color: #D87D4A;
+}
+
+@media (min-width: 768px) {
+  .menuContent {
+    padding: 84px 40px 67px;
+  }
 } 
