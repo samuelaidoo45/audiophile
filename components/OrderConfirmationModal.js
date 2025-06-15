@@ -68,7 +68,6 @@ const OrderConfirmationModal = ({ isOpen, onClose, orderDetails }) => {
           className={styles.backButton}
           onClick={() => {
             router.push('/');
-            localStorage.removeItem('cart'); // Clear cart after successful order
           }}
         >
           BACK TO HOME

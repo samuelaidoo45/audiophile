@@ -141,6 +141,8 @@ const CheckoutPage = () => {
     
     if (validateForm()) {
       const totals = calculateTotals();
+      localStorage.removeItem('cart'); // Clear cart immediately after successful validation
+      window.dispatchEvent(new Event('cartUpdated')); // Update cart count in header
       setShowConfirmation(true);
     } else {
       console.log('Form has errors');
