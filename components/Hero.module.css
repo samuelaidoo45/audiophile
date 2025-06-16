@@ -144,43 +144,61 @@
 @media (min-width: 1110px) {
   .hero {
     height: 632px;
+    margin-top: 0;
+    position: relative;
   }
 
   .heroImage {
     background-image: url('/assets/home/desktop/image-hero.jpg');
+    background-position: right center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 1;
   }
 
   .heroContent {
     margin-top: 0;
+    max-width: 1110px;
+    margin: 0 auto;
+    height: 100%;
     display: flex;
-    justify-content: center;
+    align-items: center;
   }
 
   .heroText {
     text-align: left;
-    max-width: 1110px;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 379px;
-    margin-left: 165px;
+    width: 398px;
+    margin-left: 0;
+    z-index: 2;
   }
 
   .newProduct {
     text-align: left;
+    margin-bottom: 24px;
   }
 
   .title {
+    font-size: 56px;
+    line-height: 58px;
     text-align: left;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
   }
 
   .description {
+    font-size: 15px;
+    line-height: 25px;
     text-align: left;
+    opacity: 0.75;
+    margin-bottom: 40px;
     margin-left: 0;
+    max-width: 349px;
   }
 
   .ctaButton {
     margin: 0;
+    width: 160px;
+    height: 48px;
   }
 } 
