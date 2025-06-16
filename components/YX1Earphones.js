@@ -11,7 +11,7 @@ export default function YX1Earphones() {
         <div className={styles.contentContainer}>
           <h2 className={styles.title}>YX1 EARPHONES</h2>
           <Link href="/earphones/yx1-earphones" className={styles.button}>
-            SEE PRODUCT
+            <span className={styles.buttonText}>SEE PRODUCT</span>
           </Link>
         </div>
       </section>

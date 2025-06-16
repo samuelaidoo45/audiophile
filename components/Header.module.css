@@ -108,6 +108,8 @@
 @media (min-width: 1110px) {
   .headerContent {
     padding: 0;
+    max-width: 1110px;
+    margin: 0 auto;
   }
 
   .menuButton {
@@ -136,5 +138,21 @@
 
   .navLink:hover {
     color: #D87D4A;
+  }
+
+  .cartButton {
+    transition: opacity 0.3s ease;
+  }
+
+  .cartButton:hover {
+    opacity: 0.7;
+  }
+
+  .logo {
+    transition: opacity 0.3s ease;
+  }
+
+  .logo:hover {
+    opacity: 0.7;
   }
 } 
