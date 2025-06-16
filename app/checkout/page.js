@@ -204,122 +204,134 @@ const CheckoutPage = () => {
 
         <div className={`${styles.container} ${styles.mainContent}`}>
           <form onSubmit={handleSubmit} className={styles.checkoutContent}>
-            <div className={styles.checkoutForm}>
-              <h1>CHECKOUT</h1>
+            <h1>CHECKOUT</h1>
 
-              {/* Billing Details Section */}
-              <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>BILLING DETAILS</h2>
-                <div className={styles.formGrid}>
+            <div className={styles.billingDetails}>
+              <h2 className={styles.sectionTitle}>BILLING DETAILS</h2>
+              <div className={styles.formGrid}>
+                <div className={styles.formGroup} data-area="name">
                   {renderFormGroup('Name', 'name', 'text', 'Alexei Ward')}
+                </div>
+                <div className={styles.formGroup} data-area="email">
                   {renderFormGroup('Email Address', 'email', 'email', 'alexei@mail.com')}
+                </div>
+                <div className={styles.formGroup} data-area="phone">
                   {renderFormGroup('Phone Number', 'phone', 'tel', '+1 202-555-0136')}
                 </div>
               </div>
+            </div>
 
-              {/* Shipping Info Section */}
-              <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>SHIPPING INFO</h2>
-                <div className={styles.formGrid}>
-                  {renderFormGroup('Your Address', 'address', 'text', '1137 Williams Avenue')}
+            <div className={styles.shippingInfo}>
+              <h2 className={styles.sectionTitle}>SHIPPING INFO</h2>
+              <div className={styles.formGrid}>
+                <div className={styles.formGroup} data-area="address">
+                  {renderFormGroup('Address', 'address', 'text', '1137 Williams Avenue')}
+                </div>
+                <div className={styles.formGroup} data-area="zipcode">
                   {renderFormGroup('ZIP Code', 'zipCode', 'text', '10001')}
+                </div>
+                <div className={styles.formGroup} data-area="city">
                   {renderFormGroup('City', 'city', 'text', 'New York')}
+                </div>
+                <div className={styles.formGroup} data-area="country">
                   {renderFormGroup('Country', 'country', 'text', 'United States')}
                 </div>
               </div>
-
-              {/* Payment Details Section */}
-              <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>PAYMENT DETAILS</h2>
-                <div className={styles.formGrid}>
-                  <div className={styles.formGroup}>
-                    <label>Payment Method</label>
-                    <div className={styles.paymentMethods}>
-                      <button
-                        type="button"
-                        className={`${styles.paymentMethod} ${formData.paymentMethod === 'e-Money' ? styles.selected : ''}`}
-                        onClick={() => handlePaymentMethodChange('e-Money')}
-                      >
-                        <div className={styles.radio}>
-                          <div className={styles.radioInner}></div>
-                        </div>
-                        e-Money
-                      </button>
-                      <button
-                        type="button"
-                        className={`${styles.paymentMethod} ${formData.paymentMethod === 'Cash' ? styles.selected : ''}`}
-                        onClick={() => handlePaymentMethodChange('Cash')}
-                      >
-                        <div className={styles.radio}>
-                          <div className={styles.radioInner}></div>
-                        </div>
-                        Cash on Delivery
-                      </button>
-                    </div>
-                  </div>
-
-                  {formData.paymentMethod === 'e-Money' && (
-                    <>
-                      {renderFormGroup('e-Money Number', 'eMoneyNumber', 'text', '238521993')}
-                      {renderFormGroup('e-Money PIN', 'eMoneyPin', 'text', '6891')}
-                    </>
-                  )}
-                </div>
-              </div>
             </div>
 
-            {/* Summary Section */}
-            <div className={styles.summary}>
-              <h2>SUMMARY</h2>
-              <div className={styles.summaryItems}>
-                {cartItems.map((item, index) => (
-                  <div key={index} className={styles.summaryItem}>
-                    <div className={styles.productInfo}>
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        width={64}
-                        height={64}
-                        className={styles.productImage}
-                      />
-                      <div>
-                        <h3>{item.shortName || item.name.split(' ').slice(0, 2).join(' ')}</h3>
-                        <p>$ {item.price.toLocaleString()}</p>
+            <div className={styles.paymentDetails}>
+              <h2 className={styles.sectionTitle}>PAYMENT DETAILS</h2>
+              <label className={styles.label}>Payment Method</label>
+              <div className={styles.formGrid}>
+                <div className={styles.formGroup} data-area="method">
+                  <div className={styles.paymentMethods}>
+                    <button
+                      type="button"
+                      className={`${styles.paymentMethod} ${formData.paymentMethod === 'e-Money' ? styles.selected : ''}`}
+                      onClick={() => handlePaymentMethodChange('e-Money')}
+                    >
+                      <div className={styles.radio}>
+                        <div className={styles.radioInner}></div>
                       </div>
-                    </div>
-                    <span className={styles.quantity}>x{item.quantity}</span>
+                      e-Money
+                    </button>
+                    <button
+                      type="button"
+                      className={`${styles.paymentMethod} ${formData.paymentMethod === 'Cash' ? styles.selected : ''}`}
+                      onClick={() => handlePaymentMethodChange('Cash')}
+                    >
+                      <div className={styles.radio}>
+                        <div className={styles.radioInner}></div>
+                      </div>
+                      Cash on Delivery
+                    </button>
                   </div>
-                ))}
+                </div>
+                {formData.paymentMethod === 'e-Money' && (
+                  <>
+                    <div className={styles.formGroup} data-area="emoney-number">
+                      {renderFormGroup('e-Money Number', 'eMoneyNumber', 'text', '238521993')}
+                    </div>
+                    <div className={styles.formGroup} data-area="emoney-pin">
+                      {renderFormGroup('e-Money PIN', 'eMoneyPin', 'text', '6891')}
+                    </div>
+                  </>
+                )}
               </div>
-
-              <div className={styles.summaryDetails}>
-                <div className={styles.summaryRow}>
-                  <span>TOTAL</span>
-                  <span className={styles.price}>$ {totals.subtotal.toLocaleString()}</span>
-                </div>
-                <div className={styles.summaryRow}>
-                  <span>SHIPPING</span>
-                  <span className={styles.price}>$ {totals.shipping}</span>
-                </div>
-                <div className={styles.summaryRow}>
-                  <span>VAT (INCLUDED)</span>
-                  <span className={styles.price}>$ {Math.round(totals.vat).toLocaleString()}</span>
-                </div>
-                <div className={`${styles.summaryRow} ${styles.grandTotal}`}>
-                  <span>GRAND TOTAL</span>
-                  <span className={styles.price}>$ {totals.grandTotal.toLocaleString()}</span>
-                </div>
-              </div>
-
-              <button 
-                type="submit" 
-                className={styles.continueButton}
-                disabled={cartItems.length === 0}
-              >
-                CONTINUE & PAY
-              </button>
             </div>
           </form>
+
+          <div className={styles.summary}>
+            <h2>SUMMARY</h2>
+            <div className={styles.summaryItems}>
+              {cartItems.map((item, index) => (
+                <div key={index} className={styles.summaryItem}>
+                  <div className={styles.productInfo}>
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={64}
+                      height={64}
+                      className={styles.productImage}
+                    />
+                    <div>
+                      <h3>{item.shortName || item.name.split(' ').slice(0, 2).join(' ')}</h3>
+                      <p>$ {item.price.toLocaleString()}</p>
+                    </div>
+                  </div>
+                  <span className={styles.quantity}>x{item.quantity}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className={styles.summaryDetails}>
+              <div className={styles.summaryRow}>
+                <span>TOTAL</span>
+                <span className={styles.price}>$ {totals.subtotal.toLocaleString()}</span>
+              </div>
+              <div className={styles.summaryRow}>
+                <span>SHIPPING</span>
+                <span className={styles.price}>$ {totals.shipping}</span>
+              </div>
+              <div className={styles.summaryRow}>
+                <span>VAT (INCLUDED)</span>
+                <span className={styles.price}>$ {Math.round(totals.vat).toLocaleString()}</span>
+              </div>
+              <div className={`${styles.summaryRow} ${styles.grandTotal}`}>
+                <span>GRAND TOTAL</span>
+                <span className={styles.price}>$ {totals.grandTotal.toLocaleString()}</span>
+              </div>
+            </div>
+
+            <button 
+              type="submit" 
+              className={styles.continueButton}
+              disabled={cartItems.length === 0}
+              onClick={handleSubmit}
+            >
+              CONTINUE & PAY
+            </button>
+          </div>
         </div>
       </div>
       <Footer />
