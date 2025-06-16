@@ -30,13 +30,20 @@ export default function SpeakersList() {
       {speakers.map((speaker) => (
         <div key={speaker.id} className={styles.productCard}>
           <div className={styles.imageContainer}>
-            <Image
-              src={speaker.image.mobile.replace('./assets/', '/assets/')}
-              alt={speaker.name}
-              width={327}
-              height={352}
-              className={styles.productImage}
-            />
+            <picture>
+              <source 
+                media="(min-width: 768px)"
+                srcSet={speaker.categoryImage.tablet.replace('./assets/', '/assets/')}
+              />
+              <Image
+                src={speaker.categoryImage.mobile.replace('./assets/', '/assets/')}
+                alt={speaker.name}
+                width={327}
+                height={352}
+                className={styles.productImage}
+                priority={speaker.new}
+              />
+            </picture>
           </div>
           <div className={styles.productInfo}>
             {speaker.new && <span className={styles.newProduct}>NEW PRODUCT</span>}

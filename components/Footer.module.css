@@ -109,6 +109,10 @@
     gap: 34px;
   }
 
+  .description {
+    text-align: left;
+  }
+
   .bottom {
     flex-direction: row;
     justify-content: space-between;

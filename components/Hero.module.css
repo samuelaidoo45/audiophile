@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 600px;
   background: #191919;
   overflow: hidden;
@@ -25,7 +25,7 @@
   left: 0;
   top: 0;
   z-index: 1;
-  background: url('/assets/home/mobile/image-header.jpg') no-repeat center bottom;
+  background: url('/assets/home/mobile/image-header.jpg') no-repeat center;
   background-size: cover;
   opacity: 0.5;
 }
@@ -109,11 +109,21 @@
   }
 
   .heroImage {
-    background-image: url('/assets/home/tablet/image-header.jpg');
+    background: url('/assets/home/tablet/image-header.jpg') no-repeat center;
+    background-size: cover;
   }
 
   .heroContent {
     margin-top: 126px;
+    max-width: 379px;
+  }
+
+  .heroText {
+    padding: 0;
+  }
+
+  .newProduct {
+    margin-bottom: 24px;
   }
 
   .title {
@@ -124,6 +134,8 @@
   }
 
   .description {
+    font-size: 15px;
+    line-height: 25px;
     max-width: 349px;
     margin-bottom: 40px;
   }

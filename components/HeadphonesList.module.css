@@ -27,7 +27,8 @@
 .productImage {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 32px;
 }
 
 .productInfo {
@@ -36,6 +37,8 @@
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  max-width: 572px;
+  margin: 0 auto;
 }
 
 .newProduct {
@@ -80,4 +83,40 @@
 
 .seeProductButton:hover {
   background-color: #FBAF85;
+}
+
+@media (min-width: 768px) {
+  .productList {
+    padding: 120px 40px;
+    gap: 160px;
+  }
+
+  .productCard {
+    flex-direction: column;
+    gap: 52px;
+  }
+
+  .imageContainer {
+    width: 100%;
+    max-width: 689px;
+    height: 352px;
+  }
+
+  .productInfo {
+    text-align: center;
+    align-items: center;
+    max-width: 572px;
+    gap: 32px;
+  }
+
+  .productName {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.5px;
+  }
+
+  .productDescription {
+    font-size: 15px;
+    line-height: 25px;
+  }
 } 

@@ -59,4 +59,30 @@
 .button:hover {
   background: #000000;
   color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+  .yx1Wrapper {
+    padding-bottom: 96px;
+  }
+
+  .yx1Section {
+    margin: 0 40px;
+    flex-direction: row;
+    gap: 11px;
+  }
+
+  .imageContainer {
+    flex: 1;
+    height: 320px;
+  }
+
+  .image {
+    background-image: url('/assets/home/tablet/image-earphones-yx1.jpg');
+  }
+
+  .contentContainer {
+    flex: 1;
+    padding: 101px 41px;
+  }
 } 

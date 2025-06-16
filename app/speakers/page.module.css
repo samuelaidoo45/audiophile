@@ -27,4 +27,17 @@
   letter-spacing: 2px;
   text-align: center;
   margin: 0;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .categoryHeader {
+    height: 236px;
+    margin-top: 90px;
+  }
+
+  .title {
+    font-size: 40px;
+    letter-spacing: 1.43px;
+  }
 } 
