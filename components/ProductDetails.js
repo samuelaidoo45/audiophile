@@ -65,6 +65,9 @@ const ProductDetails = ({ slug }) => {
 
     // Reset quantity
     setQuantity(1);
+
+    // Show cart modal
+    setIsCartOpen(true);
   };
 
   if (!currentProduct) {
@@ -97,8 +100,8 @@ const ProductDetails = ({ slug }) => {
               <Image
                 src={currentProduct.image.mobile.replace('./', '/')}
                 alt={currentProduct.name}
-                width={327}
-                height={352}
+                width={540}
+                height={560}
                 priority
                 className={styles.responsiveImage}
               />

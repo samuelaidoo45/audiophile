@@ -28,18 +28,25 @@ export default function EarphonesList() {
       {earphones.map((earphone) => (
         <div key={earphone.id} className={styles.product}>
           <div className={styles.imageContainer}>
-            <Image
-              src={earphone.image.mobile.replace('./assets/', '/assets/')}
-              alt={earphone.name}
-              width={327}
-              height={352}
-              className={styles.productImage}
-            />
+            <picture>
+              <source 
+                media="(min-width: 768px)"
+                srcSet={earphone.categoryImage.tablet.replace('./assets/', '/assets/')}
+              />
+              <Image
+                src={earphone.categoryImage.mobile.replace('./assets/', '/assets/')}
+                alt={earphone.name}
+                width={327}
+                height={352}
+                className={styles.productImage}
+                priority={earphone.new}
+              />
+            </picture>
           </div>
           <div className={styles.productInfo}>
             {earphone.new && <span className={styles.newProduct}>NEW PRODUCT</span>}
             <h2 className={styles.productName}>{formatProductName(earphone.name)}</h2>
-            <p>{earphone.description}</p>
+            <p className={styles.productDescription}>{earphone.description}</p>
             <Link 
               href={`/earphones/${earphone.slug}`} 
               className={styles.seeProduct}

@@ -142,4 +142,41 @@
 .zx7Button:hover {
   background: #000000;
   color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+  .featured {
+    padding: 52px 24px 64px;
+    margin: 0 40px;
+  }
+
+  .imageWrapper {
+    width: 197px;
+    height: 237px;
+    margin-bottom: 64px;
+  }
+
+  .content {
+    max-width: 349px;
+  }
+
+  .title {
+    font-size: 56px;
+    line-height: 58px;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+  }
+
+  .description {
+    margin-bottom: 40px;
+  }
+
+  .featuredWrapper {
+    padding-bottom: 32px;
+  }
+
+  .zx7Section {
+    margin: 0 40px;
+    background-image: url('/assets/home/tablet/image-speaker-zx7.jpg');
+  }
 } 

@@ -23,8 +23,22 @@
   letter-spacing: 2px;
   text-align: center;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .main {
   background-color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+  .categoryHeader {
+    height: 246px;
+    margin-top: 90px;
+  }
+
+  .title {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.5px;
+  }
 } 
