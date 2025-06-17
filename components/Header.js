@@ -17,8 +17,9 @@ export default function Header() {
         <div className={styles.leftSection}>
           <button 
             className={styles.menuButton}
-            onClick={() => setIsMobileMenuOpen(true)}
-            aria-label="Open menu"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
           >
             <Image
               src="/assets/shared/tablet/icon-hamburger.svg"

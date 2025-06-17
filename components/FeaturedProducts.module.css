@@ -149,74 +149,14 @@
   color: #FFFFFF;
 }
 
-/* YX1 Earphones Styles */
-.yx1Section {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.yx1ImageContainer {
-  border-radius: 8px;
-  overflow: hidden;
-  height: 200px;
-}
-
-.yx1Image {
-  width: 100%;
-  height: 100%;
-  background: url('/assets/home/mobile/image-earphones-yx1.jpg') no-repeat center;
-  background-size: cover;
-}
-
-.yx1ContentContainer {
-  background: #F1F1F1;
-  border-radius: 8px;
-  padding: 41px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.yx1Title {
-  color: #000000;
-  font-size: 28px;
-  line-height: 38px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 32px;
-  text-transform: uppercase;
-}
-
-.yx1Button {
-  background: transparent;
-  border: 1px solid #000000;
-  padding: 15px 30px;
-  color: #000000;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.yx1Button:hover {
-  background: #000000;
-  color: #FFFFFF;
-}
-
 /* Tablet Styles */
 @media (min-width: 768px) {
   .featuredProducts {
-    padding: 64px 40px 96px;
+    padding: 96px 40px;
   }
 
   .zx9Section {
-    padding: 52px 24px 64px;
+    padding: 52px 24px;
     margin-bottom: 32px;
   }
 
@@ -234,7 +174,6 @@
     font-size: 56px;
     line-height: 58px;
     letter-spacing: 2px;
-    margin-bottom: 24px;
   }
 
   .zx9Description {
@@ -243,86 +182,60 @@
 
   .zx7Section {
     background-image: url('/assets/home/tablet/image-speaker-zx7.jpg');
+    padding-left: 62px;
     margin-bottom: 32px;
   }
 
-  .yx1Section {
-    flex-direction: row;
-    gap: 11px;
-  }
-
-  .yx1ImageContainer {
-    flex: 1;
-    height: 320px;
-  }
-
-  .yx1Image {
-    background-image: url('/assets/home/tablet/image-earphones-yx1.jpg');
-  }
-
-  .yx1ContentContainer {
-    flex: 1;
-    padding: 101px 41px;
-  }
-
   .zx9Section::before {
-    background-position: center center;
     background-size: 944px;
+    top: -10%;
   }
 }
 
 /* Desktop Styles */
 @media (min-width: 1110px) {
   .featuredProducts {
-    padding: 64px 0 200px;
+    padding: 0;
     max-width: 1110px;
-    margin: 0 auto;
+    margin: 0 auto 200px;
   }
 
   .zx9Section {
-    padding: 96px 95px 0;
-    height: 560px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+    padding: 0;
     margin-bottom: 48px;
+    height: 560px;
   }
 
   .zx9Section::before {
-    top: 0%;
-    background-position: -150px center;
     background-size: 944px;
+    top: -10%;
   }
 
   .zx9Container {
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    text-align: left;
-    width: 100%;
-    max-width: none;
+    padding: 0 95px;
+    height: 100%;
     gap: 138px;
-    position: relative;
-    z-index: 1;
   }
 
   .zx9ImageWrapper {
     width: 410px;
     height: 493px;
-    margin-bottom: 0;
+    margin: 0;
+    margin-top: 96px;
     flex-shrink: 0;
-    transform: translateY(16px);
   }
 
   .zx9Content {
-    align-items: flex-start;
     max-width: 349px;
-    flex-shrink: 0;
-    align-self: center;
-    padding-bottom: 0;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 24px;
   }
 
   .zx9Title {
-    text-align: left;
     font-size: 56px;
     line-height: 58px;
     letter-spacing: 2px;
@@ -330,87 +243,30 @@
   }
 
   .zx9Description {
-    text-align: left;
-    font-size: 15px;
-    line-height: 25px;
     margin-bottom: 40px;
   }
 
   .zx9Button {
-    align-self: flex-start;
-    width: 160px;
-    height: 48px;
+    padding: 15px 30px;
   }
 
   .zx7Section {
     background-image: url('/assets/home/desktop/image-speaker-zx7.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 320px;
     padding-left: 95px;
     margin-bottom: 48px;
   }
 
   .zx7Content {
-    justify-content: center;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    max-width: 400px;
   }
 
   .zx7Title {
     font-size: 28px;
     line-height: 38px;
     letter-spacing: 2px;
-    margin-bottom: 32px;
   }
 
   .zx7Button {
-    padding: 15px 31px;
-    min-width: 160px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .yx1Section {
-    flex-direction: row;
-    gap: 30px;
-    height: 320px;
-  }
-
-  .yx1ImageContainer {
-    flex: 1;
-    height: 320px;
-  }
-
-  .yx1Image {
-    background-image: url('/assets/home/desktop/image-earphones-yx1.jpg');
-    background-size: cover;
-    background-position: center;
-  }
-
-  .yx1ContentContainer {
-    flex: 1;
-    padding: 95px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 320px;
-    box-sizing: border-box;
-  }
-
-  .yx1Title {
-    font-size: 28px;
-    line-height: 38px;
-    letter-spacing: 2px;
-    margin-bottom: 32px;
-  }
-
-  .yx1Button {
-    width: 160px;
-    height: 48px;
+    padding: 15px 30px;
   }
 } 
