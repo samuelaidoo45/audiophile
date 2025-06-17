@@ -146,7 +146,7 @@
 
 @media (min-width: 1110px) {
   .categories {
-    padding: 200px 0;
+    padding: 120px 0 168px;
     margin: 0;
   }
 
@@ -157,12 +157,13 @@
   .category {
     padding: 116px 30px 30px;
     min-height: 204px;
-    margin: 0;
+    margin-top: 85px;
+    width: 350px;
   }
 
   .imageWrapper {
     width: 180px;
-    height: 140px;
+    height: 160px;
     top: -67px;
   }
 
@@ -175,5 +176,10 @@
     font-size: 18px;
     letter-spacing: 1.3px;
     margin-bottom: 15px;
+  }
+
+  .shopButton {
+    font-size: 13px;
+    letter-spacing: 1px;
   }
 } 

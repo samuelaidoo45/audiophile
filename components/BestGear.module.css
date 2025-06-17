@@ -1,5 +1,5 @@
 .wrapper {
-  background: #FAFAFA;
+  background: #FFFFFF;
   padding: 0 24px;
   padding-bottom: 120px;
   width: 100%;
@@ -87,7 +87,7 @@
 @media (min-width: 1110px) {
   .wrapper {
     padding: 0;
-    padding-bottom: 200px;
+    padding-bottom: 160px;
   }
 
   .container {
@@ -102,19 +102,27 @@
     flex: 1;
     height: 588px;
     margin-bottom: 0;
+    max-width: 540px;
   }
 
   .content {
     flex: 1;
     align-items: flex-start;
     max-width: 445px;
+    padding: 0;
   }
 
   .title {
     text-align: left;
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.5px;
+    margin-bottom: 32px;
   }
 
   .description {
     text-align: left;
+    font-size: 15px;
+    line-height: 25px;
   }
 } 

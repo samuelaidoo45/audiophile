@@ -37,20 +37,31 @@ export default function HeadphonesList() {
       {headphones.map((headphone) => (
         <div key={headphone.id} className={styles.productCard}>
           <div className={styles.imageContainer}>
-            <Image
-              src={headphone.image.mobile.replace('./assets/', '/assets/')}
-              alt={headphone.name}
-              width={327}
-              height={352}
-              className={styles.productImage}
-            />
+            <picture>
+              <source 
+                media="(min-width: 1110px)" 
+                srcSet={headphone.categoryImage.desktop.replace('./assets/', '/assets/')}
+              />
+              <source 
+                media="(min-width: 768px)" 
+                srcSet={headphone.categoryImage.tablet.replace('./assets/', '/assets/')}
+              />
+              <Image
+                src={headphone.categoryImage.mobile.replace('./assets/', '/assets/')}
+                alt={headphone.name}
+                width={540}
+                height={560}
+                className={styles.productImage}
+                priority={headphone.new}
+              />
+            </picture>
           </div>
           <div className={styles.productInfo}>
             {headphone.new && <span className={styles.newProduct}>NEW PRODUCT</span>}
             <h2 className={styles.productName}>{formatProductName(headphone.name)}</h2>
             <p className={styles.productDescription}>{headphone.description}</p>
-            <Link href={`/headphones/${headphone.slug}`}>
-              <button className={styles.seeProductButton}>SEE PRODUCT</button>
+            <Link href={`/headphones/${headphone.slug}`} className={styles.seeProductButton}>
+              SEE PRODUCT
             </Link>
           </div>
         </div>
