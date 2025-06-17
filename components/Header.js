@@ -65,9 +65,10 @@ export default function Header() {
         <MobileMenu onClose={() => setIsMobileMenuOpen(false)} />
       )}
 
-      {isCartOpen && (
-        <CartModal onClose={() => setIsCartOpen(false)} />
-      )}
+      <CartModal 
+        isOpen={isCartOpen} 
+        onClose={() => setIsCartOpen(false)} 
+      />
     </header>
   );
 } 

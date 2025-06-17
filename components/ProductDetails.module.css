@@ -226,9 +226,17 @@
 }
 
 .galleryImage {
-  border-radius: 8px;
+  border-radius: 4px;
   overflow: hidden;
-  background: #F1F1F1;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.galleryImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 35px;
 }
 
 .suggestions {
@@ -442,5 +450,151 @@
   
   .suggestionsGrid {
     gap: 56px;
+  }
+}
+
+@media (min-width: 1110px) {
+  .container {
+    padding: 0;
+  }
+
+  .goBack {
+    padding: 79px 0 56px;
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .mainSection {
+    flex-direction: row;
+    gap: 125px;
+    margin-bottom: 160px;
+    align-items: center;
+  }
+
+  .productImage {
+    flex: 1;
+    max-width: 540px;
+    height: 560px;
+  }
+
+  .productInfo {
+    flex: 1;
+    max-width: 445px;
+    gap: 32px;
+  }
+
+  .productName {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.5px;
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .price {
+    font-size: 18px;
+    letter-spacing: 1.3px;
+  }
+
+  .featureSection {
+    flex-direction: row;
+    gap: 125px;
+    margin-bottom: 160px;
+  }
+
+  .features {
+    flex: 2;
+    max-width: 635px;
+  }
+
+  .features h2 {
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.14px;
+    margin-bottom: 32px;
+  }
+
+  .inTheBox {
+    flex: 1;
+    max-width: 350px;
+  }
+
+  .inTheBox h2 {
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.14px;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: repeat(2, 280px);
+    gap: 32px;
+    margin-bottom: 160px;
+    max-width: 1110px;
+  }
+
+  .galleryImage:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .galleryImage:nth-child(2) {
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  .galleryImage:nth-child(3) {
+    grid-row: 1 / span 2;
+    grid-column: 2;
+    height: 592px;
+  }
+
+  .galleryImage {
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+  }
+
+  .responsiveImage {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    border-radius: 4px;
+    position: relative !important;
+  }
+
+  .suggestions {
+    margin-bottom: 160px;
+  }
+
+  .suggestions h2 {
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.14px;
+    margin-bottom: 64px;
+  }
+
+  .suggestionsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .suggestionCard {
+    max-width: 350px;
+  }
+
+  .suggestionImage {
+    height: 318px;
+  }
+
+  .suggestionCard h3 {
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 1.7px;
+    margin: 40px 0 32px;
   }
 } 

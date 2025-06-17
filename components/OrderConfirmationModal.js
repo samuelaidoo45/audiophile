@@ -1,9 +1,29 @@
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './OrderConfirmationModal.module.css';
 
 const OrderConfirmationModal = ({ isOpen, onClose, orderDetails }) => {
   const router = useRouter();
+  const [showAllItems, setShowAllItems] = useState(true); // Start with true for desktop
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  // Check if it's desktop view
+  useEffect(() => {
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+    
+    checkDesktop();
+    window.addEventListener('resize', checkDesktop);
+    
+    return () => window.removeEventListener('resize', checkDesktop);
+  }, []);
+
+  // Set initial state based on screen size
+  useEffect(() => {
+    setShowAllItems(isDesktop);
+  }, [isDesktop]);
 
   if (!isOpen) return null;
 
@@ -34,26 +54,42 @@ const OrderConfirmationModal = ({ isOpen, onClose, orderDetails }) => {
 
         <div className={styles.orderSummary}>
           <div className={styles.itemsList}>
-            <div className={styles.mainItem}>
-              <div className={styles.productInfo}>
-                <Image
-                  src={mainItem.image}
-                  alt={mainItem.name}
-                  width={50}
-                  height={50}
-                  className={styles.productImage}
-                />
-                <div className={styles.productDetails}>
-                  <h3>{mainItem.shortName || mainItem.name.split(' ').slice(0, 2).join(' ')}</h3>
-                  <p>$ {mainItem.price.toLocaleString()}</p>
-                </div>
-                <span className={styles.quantity}>x{mainItem.quantity}</span>
+            {/* Always show first item */}
+            <div className={styles.orderItem}>
+              <div className={styles.productImage}>
+                <img src={mainItem.image} alt={mainItem.name} />
               </div>
+              <div className={styles.productDetails}>
+                <h3>{mainItem.shortName || mainItem.name.split(' ').slice(0, 2).join(' ')}</h3>
+                <p>$ {mainItem.price.toLocaleString()}</p>
+              </div>
+              <span className={styles.quantity}>x{mainItem.quantity}</span>
             </div>
-            
+
+            {/* Show additional items if expanded or if only one other item */}
+            {showAllItems && items.slice(1).map((item, index) => (
+              <div key={index} className={styles.orderItem}>
+                <div className={styles.productImage}>
+                  <img src={item.image} alt={item.name} />
+                </div>
+                <div className={styles.productDetails}>
+                  <h3>{item.shortName || item.name.split(' ').slice(0, 2).join(' ')}</h3>
+                  <p>$ {item.price.toLocaleString()}</p>
+                </div>
+                <span className={styles.quantity}>x{item.quantity}</span>
+              </div>
+            ))}
+
+            {/* Toggle button for multiple items */}
             {otherItemsCount > 0 && (
-              <div className={styles.otherItems}>
-                and {otherItemsCount} other item(s)
+              <div className={styles.toggleSection}>
+                <hr className={styles.divider} />
+                <button 
+                  className={styles.toggleButton}
+                  onClick={() => setShowAllItems(!showAllItems)}
+                >
+                  {showAllItems ? 'View less' : `and ${otherItemsCount} other item(s)`}
+                </button>
               </div>
             )}
           </div>

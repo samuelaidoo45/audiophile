@@ -165,8 +165,7 @@ const ProductDetails = ({ slug }) => {
               <Image
                 src={currentProduct.gallery.first.mobile.replace('./', '/')}
                 alt="Gallery image 1"
-                width={445}
-                height={280}
+                fill
                 className={styles.responsiveImage}
               />
             </picture>
@@ -178,8 +177,7 @@ const ProductDetails = ({ slug }) => {
               <Image
                 src={currentProduct.gallery.second.mobile.replace('./', '/')}
                 alt="Gallery image 2"
-                width={445}
-                height={280}
+                fill
                 className={styles.responsiveImage}
               />
             </picture>
@@ -191,8 +189,7 @@ const ProductDetails = ({ slug }) => {
               <Image
                 src={currentProduct.gallery.third.mobile.replace('./', '/')}
                 alt="Gallery image 3"
-                width={635}
-                height={592}
+                fill
                 className={styles.responsiveImage}
               />
             </picture>
