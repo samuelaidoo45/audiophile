@@ -32,6 +32,10 @@ export default function SpeakersList() {
           <div className={styles.imageContainer}>
             <picture>
               <source 
+                media="(min-width: 1110px)"
+                srcSet={speaker.categoryImage.desktop.replace('./assets/', '/assets/')}
+              />
+              <source 
                 media="(min-width: 768px)"
                 srcSet={speaker.categoryImage.tablet.replace('./assets/', '/assets/')}
               />
