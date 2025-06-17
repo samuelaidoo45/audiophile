@@ -113,4 +113,52 @@
   .newProduct {
     margin-bottom: -8px;
   }
+}
+
+@media (min-width: 1110px) {
+  .container {
+    padding: 160px 0;
+    max-width: 1110px;
+    margin: 0 auto;
+  }
+
+  .product {
+    flex-direction: row;
+    gap: 125px;
+    align-items: center;
+  }
+
+  .product:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .imageContainer {
+    flex: 1;
+    max-width: 540px;
+    height: 560px;
+  }
+
+  .productInfo {
+    flex: 1;
+    text-align: left;
+    align-items: flex-start;
+    max-width: 445px;
+  }
+
+  .productName {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.5px;
+  }
+
+  .newProduct {
+    font-size: 14px;
+    letter-spacing: 10px;
+    margin-bottom: 0;
+  }
+
+  .productDescription {
+    font-size: 15px;
+    line-height: 25px;
+  }
 } 

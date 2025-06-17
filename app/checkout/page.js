@@ -150,7 +150,7 @@ const CheckoutPage = () => {
   };
 
   const renderFormGroup = (label, name, type = 'text', placeholder) => (
-    <div className={styles.formGroup}>
+    <div className={styles.formGroup} data-area={name}>
       <div className={styles.labelWrapper}>
         <label htmlFor={name}>{label}</label>
         {touched[name] && errors[name] && (

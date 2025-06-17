@@ -110,6 +110,7 @@
     padding: 0;
     max-width: 1110px;
     margin: 0 auto;
+    position: relative;
   }
 
   .menuButton {
@@ -123,7 +124,9 @@
   .nav {
     display: flex;
     gap: 34px;
-    margin-left: 197px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .navLink {

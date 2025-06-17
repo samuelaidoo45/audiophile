@@ -26,7 +26,7 @@
   border: none;
   padding: 0;
   cursor: pointer;
-  margin: 16px 0 32px;
+  margin: 16px 0 38px;
   display: inline-block;
 }
 
@@ -430,32 +430,80 @@
 
 @media (min-width: 1024px) {
   .pageWrapper {
-    padding: 32px 40px 141px;
-    min-height: calc(100vh - 365px);
+    padding: 16px 0 141px;
   }
 
   .goBack {
-    margin-top: 38px;
+    margin: 79px 0 38px;
   }
 
   .mainContent {
-    margin-top: 38px;
-  }
-
-  .checkoutContent {
     flex-direction: row;
     gap: 30px;
+    align-items: flex-start;
   }
 
   .checkoutForm {
+    flex: 1;
     max-width: 730px;
     padding: 54px 48px 48px;
+    margin: 0;
   }
 
   .summary {
     width: 350px;
-    align-self: flex-start;
+    padding: 32px;
     position: sticky;
-    top: 24px;
+    top: 120px;
+  }
+
+  .formGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .billingDetails .formGrid {
+    grid-template-areas:
+      "name email"
+      "phone phone";
+  }
+
+  .shippingInfo .formGrid {
+    grid-template-areas:
+      "address address"
+      "zipcode city"
+      "country country";
+  }
+
+  .paymentDetails .formGrid {
+    grid-template-areas:
+      "method method"
+      "emoney-number emoney-pin";
+  }
+
+  .formGroup[data-area="name"] { grid-area: name; }
+  .formGroup[data-area="email"] { grid-area: email; }
+  .formGroup[data-area="phone"] { grid-area: phone; }
+  .formGroup[data-area="address"] { grid-area: address; }
+  .formGroup[data-area="zipcode"] { grid-area: zipcode; }
+  .formGroup[data-area="city"] { grid-area: city; }
+  .formGroup[data-area="country"] { grid-area: country; }
+  .formGroup[data-area="emoney-number"] { grid-area: emoney-number; }
+  .formGroup[data-area="emoney-pin"] { grid-area: emoney-pin; }
+
+  .summaryItems {
+    margin-bottom: 32px;
+  }
+
+  .summaryItem {
+    margin-bottom: 24px;
+  }
+
+  .summaryDetails {
+    margin-bottom: 24px;
+  }
+
+  .grandTotal {
+    padding-top: 24px;
   }
 } 

@@ -77,8 +77,14 @@
   text-transform: uppercase;
   padding: 15px 30px;
   border: none;
+  cursor: pointer;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  width: 160px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .seeProductButton:hover {
@@ -106,6 +112,54 @@
     text-align: center;
     align-items: center;
     max-width: 572px;
+    gap: 32px;
+  }
+
+  .productName {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.5px;
+  }
+
+  .productDescription {
+    font-size: 15px;
+    line-height: 25px;
+  }
+}
+
+@media (min-width: 1110px) {
+  .productList {
+    padding: 160px 0;
+    max-width: 1110px;
+    margin: 0 auto;
+    gap: 160px;
+  }
+
+  .productCard {
+    flex-direction: row;
+    gap: 125px;
+    align-items: center;
+  }
+
+  .productCard:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .imageContainer {
+    flex: 1;
+    max-width: 540px;
+    height: 560px;
+  }
+
+  .productImage {
+    padding: 62px;
+  }
+
+  .productInfo {
+    flex: 1;
+    text-align: left;
+    align-items: flex-start;
+    max-width: 445px;
     gap: 32px;
   }
 
