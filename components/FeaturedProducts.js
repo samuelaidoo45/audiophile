@@ -1,6 +1,7 @@
 import styles from './FeaturedProducts.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import YX1Earphones from './YX1Earphones';
 
 export default function FeaturedProducts() {
   return (
@@ -54,17 +55,7 @@ export default function FeaturedProducts() {
       </div>
 
       {/* YX1 Earphones Section */}
-      <div className={styles.yx1Section}>
-        <div className={styles.yx1ImageContainer}>
-          <div className={styles.yx1Image} />
-        </div>
-        <div className={styles.yx1ContentContainer}>
-          <h2 className={styles.yx1Title}>YX1 EARPHONES</h2>
-          <Link href="/earphones/yx1-earphones" className={styles.yx1Button}>
-            SEE PRODUCT
-          </Link>
-        </div>
-      </div>
+      <YX1Earphones />
     </section>
   );
 } 

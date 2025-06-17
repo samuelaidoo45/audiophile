@@ -136,6 +136,24 @@
   border-color: #D87D4A;
 }
 
+.paymentDetails {
+  margin-top: 32px;
+}
+
+.paymentDetails .formGrid {
+  display: grid;
+  gap: 16px;
+}
+
+.label {
+  color: #000000;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.21px;
+  display: block;
+  margin-bottom: 9px;
+}
+
 .paymentMethods {
   display: flex;
   flex-direction: column;
@@ -157,6 +175,7 @@
   color: #000000;
   cursor: pointer;
   transition: border-color 0.3s ease;
+  text-align: left;
 }
 
 .paymentMethod:hover {
@@ -191,6 +210,22 @@
 
 .selected .radioInner {
   display: block;
+}
+
+.cashOnDeliveryInfo {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  padding: 24px;
+  grid-column: 1 / -1;
+}
+
+.cashOnDeliveryInfo p {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+  margin: 0;
 }
 
 .summary {
@@ -359,105 +394,6 @@
   }
 
   .formGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .formGroup.fullWidth {
-    grid-column: 1 / -1;
-  }
-
-  .billingDetails,
-  .shippingInfo,
-  .paymentDetails {
-    margin-bottom: 32px;
-  }
-
-  .billingDetails .formGrid {
-    grid-template-areas:
-      "name email"
-      "phone .";
-  }
-
-  .shippingInfo .formGrid {
-    grid-template-areas:
-      "address address"
-      "zipcode city"
-      "country .";
-  }
-
-  .paymentDetails {
-    position: relative;
-  }
-
-  .paymentDetails .label {
-    margin-bottom: 16px;
-  }
-
-  .paymentDetails .formGrid {
-    grid-template-areas:
-      ". method"
-      "emoney-number emoney-pin";
-  }
-
-  .paymentMethods {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .paymentMethod {
-    width: 100%;
-    margin: 0;
-  }
-
-  .formGroup[data-area="method"] {
-    grid-area: method;
-    margin-bottom: 0;
-  }
-
-  .formGroup[data-area="name"] { grid-area: name; }
-  .formGroup[data-area="email"] { grid-area: email; }
-  .formGroup[data-area="phone"] { grid-area: phone; }
-  .formGroup[data-area="address"] { grid-area: address; }
-  .formGroup[data-area="zipcode"] { grid-area: zipcode; }
-  .formGroup[data-area="city"] { grid-area: city; }
-  .formGroup[data-area="country"] { grid-area: country; }
-  .formGroup[data-area="emoney-number"] { grid-area: emoney-number; }
-  .formGroup[data-area="emoney-pin"] { grid-area: emoney-pin; }
-}
-
-@media (min-width: 1024px) {
-  .pageWrapper {
-    padding: 16px 0 141px;
-  }
-
-  .goBack {
-    margin: 79px 0 38px;
-  }
-
-  .mainContent {
-    flex-direction: row;
-    gap: 30px;
-    align-items: flex-start;
-  }
-
-  .checkoutForm {
-    flex: 1;
-    max-width: 730px;
-    padding: 54px 48px 48px;
-    margin: 0;
-  }
-
-  .summary {
-    width: 350px;
-    padding: 32px;
-    position: sticky;
-    top: 120px;
-  }
-
-  .formGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
@@ -477,8 +413,10 @@
 
   .paymentDetails .formGrid {
     grid-template-areas:
-      "method method"
+      "method-label method"
       "emoney-number emoney-pin";
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
   }
 
   .formGroup[data-area="name"] { grid-area: name; }
@@ -490,6 +428,50 @@
   .formGroup[data-area="country"] { grid-area: country; }
   .formGroup[data-area="emoney-number"] { grid-area: emoney-number; }
   .formGroup[data-area="emoney-pin"] { grid-area: emoney-pin; }
+  .formGroup[data-area="method-label"] { grid-area: method-label; }
+  .formGroup[data-area="method"] { grid-area: method; }
+}
+
+@media (min-width: 1024px) {
+  .pageWrapper {
+    padding: 16px 0 141px;
+  }
+
+  .container {
+    max-width: 1110px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .goBack {
+    margin: 79px 0 38px;
+  }
+
+  .mainContent {
+    flex-direction: row;
+    gap: 0;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+  }
+
+  .checkoutContent {
+    width: 730px;
+    padding: 54px 48px 48px;
+    margin: 0;
+  }
+
+  .checkoutForm {
+    width: 100%;
+  }
+
+  .summary {
+    width: 350px;
+    padding: 32px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 
   .summaryItems {
     margin-bottom: 32px;
@@ -505,5 +487,14 @@
 
   .grandTotal {
     padding-top: 24px;
+  }
+
+  .paymentDetails .formGrid {
+    gap: 24px;
+  }
+
+  .cashOnDeliveryInfo {
+    padding: 0;
+    margin-top: 8px;
   }
 } 

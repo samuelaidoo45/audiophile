@@ -205,6 +205,8 @@ const CheckoutPage = () => {
         <div className={`${styles.container} ${styles.mainContent}`}>
           <form onSubmit={handleSubmit} className={styles.checkoutContent}>
             <h1>CHECKOUT</h1>
+            <br></br>
+            
 
             <div className={styles.billingDetails}>
               <h2 className={styles.sectionTitle}>BILLING DETAILS</h2>
@@ -241,8 +243,10 @@ const CheckoutPage = () => {
 
             <div className={styles.paymentDetails}>
               <h2 className={styles.sectionTitle}>PAYMENT DETAILS</h2>
-              <label className={styles.label}>Payment Method</label>
               <div className={styles.formGrid}>
+                <div className={styles.formGroup} data-area="method-label">
+                  <label className={styles.label}>Payment Method</label>
+                </div>
                 <div className={styles.formGroup} data-area="method">
                   <div className={styles.paymentMethods}>
                     <button
@@ -267,7 +271,7 @@ const CheckoutPage = () => {
                     </button>
                   </div>
                 </div>
-                {formData.paymentMethod === 'e-Money' && (
+                {formData.paymentMethod === 'e-Money' ? (
                   <>
                     <div className={styles.formGroup} data-area="emoney-number">
                       {renderFormGroup('e-Money Number', 'eMoneyNumber', 'text', '238521993')}
@@ -276,6 +280,18 @@ const CheckoutPage = () => {
                       {renderFormGroup('e-Money PIN', 'eMoneyPin', 'text', '6891')}
                     </div>
                   </>
+                ) : (
+                  <div className={styles.cashOnDeliveryInfo}>
+                    <Image 
+                      src="/assets/checkout/icon-cash-on-delivery.svg"
+                      alt="Cash on Delivery"
+                      width={48}
+                      height={48}
+                    />
+                    <p>
+                      The 'Cash on Delivery' option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.
+                    </p>
+                  </div>
                 )}
               </div>
             </div>
